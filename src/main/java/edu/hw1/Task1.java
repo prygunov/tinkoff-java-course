@@ -11,21 +11,26 @@ public final class Task1 {
 
     public static long minutesToSeconds(String time) {
         Objects.requireNonNull(time);
-        if (!time.contains(":")) {
+
+        if (time.isBlank() || !time.contains(":")) {
             return -1;
         }
 
         String[] parts = time.split(":");
-        long minutes = Long.parseLong(parts[0]);
-        long seconds = Long.parseLong(parts[1]);
+        try {
+            long minutes = Long.parseLong(parts[0]);
+            long seconds = Long.parseLong(parts[1]);
 
-        if (seconds >= SECONDS_IN_MINUTE
-            || seconds < 0
-            || minutes < 0
-        ) {
+            if (seconds >= SECONDS_IN_MINUTE
+                || seconds < 0
+                || minutes < 0
+            ) {
+                return -1;
+            }
+
+            return minutes * SECONDS_IN_MINUTE + seconds;
+        } catch (NumberFormatException e) {
             return -1;
         }
-
-        return minutes * SECONDS_IN_MINUTE + seconds;
     }
 }

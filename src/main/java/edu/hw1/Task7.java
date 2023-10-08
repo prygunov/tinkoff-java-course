@@ -7,6 +7,10 @@ public final class Task7 {
 
     // taken from https://stackoverflow.com/questions/55888157/bit-circular-shift
     public static int rotateLeft(int number, int shift) {
+        if (shift < 0) {
+            return rotateRight(number, -shift);
+        }
+
         boolean negative = number < 0;
         int source = Math.abs(number);
 
@@ -25,6 +29,10 @@ public final class Task7 {
     }
 
     public static int rotateRight(int number, int shift) {
+        if (shift < 0) {
+            return rotateLeft(number, -shift);
+        }
+
         boolean negative = number < 0;
         int source = Math.abs(number);
 

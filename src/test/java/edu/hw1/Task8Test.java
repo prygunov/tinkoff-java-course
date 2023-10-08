@@ -1,8 +1,11 @@
 package edu.hw1;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+@DisplayName("Кони на доске")
 public class Task8Test {
 
     @Test
@@ -57,6 +60,22 @@ public class Task8Test {
         boolean result = Task8.knightBoardCapture(board);
 
         assertThat(result).isEqualTo(false);
+    }
+
+    @Test
+    void checkIfBoardWithWrongSize() {
+        Integer[][] board = {
+            {1, 0, 0, 0, 1, 0, 0},
+            {0, 1, 0, 0, 0, 0, 1},
+            {0, 0, 1, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 1, 0},
+            {1, 0, 0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 1, 0},
+            {0, 1, 0, 0, 0, 0, 1},
+            {0, 0, 1, 0, 0, 0, 0}
+        };
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Task8.knightBoardCapture(board));
     }
 
 }

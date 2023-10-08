@@ -1,9 +1,11 @@
 package edu.hw1;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+@DisplayName("Особый палиндром")
 public class Task5Test {
 
     @ParameterizedTest
