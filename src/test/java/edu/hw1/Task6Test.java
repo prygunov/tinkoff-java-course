@@ -15,7 +15,8 @@ public class Task6Test {
         "3524, 3",
         "6621, 5",
         "6554, 4",
-        "1234, 3"
+        "1234, 3",
+        "2221, 5"
     })
     void countStepsToCaprecara(int number, int expectedSteps) {
         assertThat(Task6.countK(number)).isEqualTo(expectedSteps);
