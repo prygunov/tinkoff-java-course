@@ -30,10 +30,15 @@ public final class Task5 {
 
     private static StringBuilder getChild(StringBuilder oldBuilder) {
         StringBuilder builder = new StringBuilder();
-        for (int i = 1; i < oldBuilder.length(); i += 2) {
+        int i;
+        for (i = 1; i < oldBuilder.length(); i += 2) {
             int n1 = Character.digit(oldBuilder.charAt(i - 1), DIGIT_RADIX);
             int n2 = Character.digit(oldBuilder.charAt(i), DIGIT_RADIX);
             builder.append(n1 + n2);
+        }
+        if (i == oldBuilder.length()) {
+            // last char fix
+            builder.append(Character.digit(oldBuilder.charAt(i - 1), DIGIT_RADIX));
         }
         return builder;
     }

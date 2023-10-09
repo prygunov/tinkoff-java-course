@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class Task5Test {
 
     @ParameterizedTest
-    @ValueSource(longs = {11211230, 13001120, 23336014, 11})
+    @ValueSource(longs = {11211230, 13001120, 23336014, 11, 123})
     void checkPalindrome(long value) {
         Assertions.assertTrue(Task5.isPalindromeDescendant(value));
     }
