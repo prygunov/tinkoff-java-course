@@ -13,6 +13,7 @@ public final class Task8 {
 
     public static boolean knightBoardCapture(Integer[][] board) {
         Objects.requireNonNull(board);
+
         if (board.length != BOARD_SIZE || board[0].length != BOARD_SIZE) {
             throw new IllegalArgumentException("Board size must be 8");
         }
